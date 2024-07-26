@@ -1,32 +1,32 @@
-import React from "react";
-import "./button.css";
-import "../App.css";
+// import React from "react";
+import "./button.css"
+import "../App.css"
 
 interface ButtonProps {
   /**
    * Is this the principal call to action on the page?
    */
-  primary?: boolean;
+  primary?: boolean
   /**
    * What background color to use
    */
-  backgroundColor?: string;
+  backgroundColor?: string
   /**
    * How large should the button be?
    */
-  size?: "small" | "medium" | "large";
+  size?: "small" | "medium" | "large"
   /**
    * Button contents
    */
-  label: string;
+  label: string
   /**
    * Optional click handler
    */
-  onClick?: () => void;
+  onClick?: () => void
   /**
    * Optional disabled
    */
-  disabled?: boolean;
+  disabled?: boolean
 }
 
 /**
@@ -42,7 +42,7 @@ export const Button = ({
 }: ButtonProps) => {
   const mode = primary
     ? "storybook-button--primary"
-    : "storybook-button--secondary";
+    : "storybook-button--secondary"
   return (
     <button
       type="button"
@@ -55,5 +55,5 @@ export const Button = ({
     >
       {label}
     </button>
-  );
-};
+  )
+}

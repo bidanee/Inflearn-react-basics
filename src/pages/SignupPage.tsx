@@ -1,23 +1,25 @@
-import { useEffect, useState } from "react";
-import { css } from "@emotion/react";
-import styled from "@emotion/styled";
-import { useNavigate } from "react-router-dom";
-import useSignup from "../hooks/useSignup";
-import { Button } from "../stories/Button";
+import { useEffect, useState } from "react"
+import { css } from "@emotion/react"
+import styled from "@emotion/styled"
+import { useNavigate } from "react-router-dom"
+import useSignup from "../hooks/useSignup"
+import { Button } from "../stories/Button"
 
 export default function SignupPage() {
-  const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const { mutate: handleSignup, isSuccess } = useSignup();
+  const navigate = useNavigate()
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [confirmPassword, setConfirmPassword] = useState("")
+  const { mutate: handleSignup, isSuccess } = useSignup()
 
   useEffect(() => {
     if (isSuccess) {
-      alert("회원가입 성공");
-      navigate("/login");
+      alert("회원가입 성공")
+      navigate("/login")
     }
-  }, [isSuccess]);
+  }, [isSuccess])
+  console.log("password", password)
+  console.log("confirmPassword", confirmPassword)
 
   return (
     <Wrapper>
@@ -84,14 +86,14 @@ export default function SignupPage() {
         onClick={() => handleSignup({ username: email, password })}
       />
     </Wrapper>
-  );
+  )
 }
 
 const ColumnSpaceBetween = css`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-`;
+`
 
 const Wrapper = styled.div`
   ${ColumnSpaceBetween}
@@ -102,32 +104,32 @@ const Wrapper = styled.div`
   > button {
     margin-bottom: 24px;
   }
-`;
+`
 
 const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 24px;
-`;
+`
 
-const CloseButton = styled.button``;
+const CloseButton = styled.button``
 
 const Title = styled.h1`
   color: var(--primary);
-`;
+`
 
 const InputSection = styled.section`
   position: relative;
   margin-top: 40px;
-`;
+`
 
 const Label = styled.label`
   margin-bottom: 16px;
   font-size: 14px;
   line-height: 21px;
   color: var(--primary);
-`;
+`
 
 const Input = styled.input`
   margin-bottom: 24px;
@@ -140,17 +142,17 @@ const Input = styled.input`
     color: var(--secondary);
     border-bottom: 1px solid var(--secondary);
   }
-`;
+`
 
-const SignupButton = styled.button`
-  width: 100%;
-  padding: 16px;
-  border-radius: 4px;
-  background-color: ${(props) =>
-    props.disabled ? "var(--mono-100)" : "var(--primary)"};
-  color: ${(props) => (props.disabled ? "var(--mono-200)" : "var(--white)")};
-  margin-bottom: 24px;
-`;
+// const SignupButton = styled.button`
+//   width: 100%;
+//   padding: 16px;
+//   border-radius: 4px;
+//   background-color: ${(props) =>
+//     props.disabled ? "var(--mono-100)" : "var(--primary)"};
+//   color: ${(props) => (props.disabled ? "var(--mono-200)" : "var(--white)")};
+//   margin-bottom: 24px;
+// `;
 
 const ErrorMessage = styled.h6`
   font-size: 12px;
@@ -158,8 +160,8 @@ const ErrorMessage = styled.h6`
   color: var(--error);
   position: absolute;
   bottom: 0;
-`;
+`
 
 const InputWrapper = styled.div`
   ${ColumnSpaceBetween}
-`;
+`

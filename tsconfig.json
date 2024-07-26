@@ -21,8 +21,13 @@
     "noUnusedLocals": true,
     "noImplicitAny": false,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": ["jest", "cypress"]
   },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "cypress/**/*.ts"],
+  "references": [{ "path": "./tsconfig.node.json" }],
+  "exclude": ["cypress.config.ts", "cypress", "node_modules"]
 }
