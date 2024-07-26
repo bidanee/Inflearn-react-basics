@@ -25,9 +25,15 @@
 
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "types": ["jest", "cypress"]
+    "types": ["cypress"]
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "cypress/**/*.ts"],
-  "references": [{ "path": "./tsconfig.node.json" }],
-  "exclude": ["cypress.config.ts", "cypress", "node_modules"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "cypress/**/*.ts",
+    "src",
+    "cypress/e2e/2-order/order.cy.ts",
+    "**/*.ts"
+  ],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }
